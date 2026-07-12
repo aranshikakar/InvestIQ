@@ -1,26 +1,186 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --bg:#020617;
+  --card:rgba(15,23,42,.55);
+  --border:rgba(255,255,255,.08);
+
+  --primary:#6366F1;
+  --secondary:#8B5CF6;
+  --accent:#06B6D4;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html{
+  scroll-behavior:smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body{
+  min-height:100vh;
+  color:white;
+  overflow-x:hidden;
+
+  background:
+  radial-gradient(circle at top left,#4338CA 0%,transparent 30%),
+  radial-gradient(circle at top right,#7C3AED 0%,transparent 28%),
+  radial-gradient(circle at bottom,#0891B2 0%,transparent 25%),
+  linear-gradient(
+      180deg,
+      #020617 0%,
+      #07111f 45%,
+      #020617 100%
+  );
+
+  font-family:Inter,Arial,Helvetica,sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Glass Card */
+
+.glass{
+  background:rgba(15,23,42,.55);
+  backdrop-filter:blur(18px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,.35);
+}
+
+/* Hover */
+
+.hover-card{
+  transition:.35s;
+}
+
+.hover-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 20px 50px rgba(99,102,241,.35);
+
+}
+
+/* Gradient Text */
+
+.gradient-text{
+
+background:linear-gradient(
+90deg,
+#818CF8,
+#A78BFA,
+#22D3EE
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+/* Button */
+
+.primary-btn{
+
+background:linear-gradient(
+90deg,
+#6366F1,
+#8B5CF6
+);
+
+color:white;
+
+transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+transform:scale(1.04);
+
+box-shadow:
+0 15px 40px rgba(99,102,241,.4);
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:9px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#020617;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#6366F1;
+
+border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#8B5CF6;
+
+}
+
+/* Fade Animation */
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+transform:translateY(25px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateY(0px);
+
+}
+
+}
+
+.fade-up{
+
+animation:fadeUp .8s ease;
+
+}
+
+/* Floating */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.float{
+
+animation:float 5s ease-in-out infinite;
+
 }
