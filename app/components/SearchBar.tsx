@@ -57,7 +57,7 @@ export default function SearchBar() {
 
           <div className="mb-8 text-center">
 
-            <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/10 px-5 py-2 text-indigo-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-5 py-2 font-medium text-violet-700">
 
               <Sparkles size={18} />
 
@@ -65,13 +65,13 @@ export default function SearchBar() {
 
             </div>
 
-            <h2 className="mt-6 text-4xl font-bold">
+            <h2 className="mt-6 text-4xl font-bold text-slate-900">
 
               Search Any Company
 
             </h2>
 
-            <p className="mt-3 text-gray-400">
+            <p className="mt-3 text-slate-600">
 
               Enter a company name to receive an AI-powered investment analysis.
 
@@ -84,7 +84,7 @@ export default function SearchBar() {
             <div className="relative flex-1">
 
               <Search
-                className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500"
+                className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"
                 size={22}
               />
 
@@ -95,7 +95,7 @@ export default function SearchBar() {
                   if (e.key === "Enter") handleSearch();
                 }}
                 placeholder="Apple, Microsoft, Tesla..."
-                className="w-full rounded-2xl border border-slate-700 bg-slate-900/60 py-5 pl-14 pr-5 text-lg text-white outline-none focus:border-indigo-500"
+                className="w-full rounded-2xl border border-slate-300 bg-white py-5 pl-14 pr-5 text-lg text-slate-900 shadow-sm outline-none transition focus:border-violet-500 focus:ring-4 focus:ring-violet-100"
               />
 
             </div>
@@ -117,7 +117,7 @@ export default function SearchBar() {
               <button
                 key={item}
                 onClick={() => setCompany(item)}
-                className="rounded-full border border-slate-700 bg-slate-900/60 px-5 py-2 text-sm hover:border-indigo-500 hover:text-indigo-300"
+                className="rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-violet-400 hover:bg-violet-50 hover:text-violet-700"
               >
                 {item}
               </button>
@@ -132,9 +132,9 @@ export default function SearchBar() {
 
           <div className="mt-16 text-center">
 
-            <div className="mx-auto h-16 w-16 animate-spin rounded-full border-4 border-indigo-500 border-t-transparent"></div>
+            <div className="mx-auto h-16 w-16 animate-spin rounded-full border-4 border-violet-600 border-t-transparent"></div>
 
-            <p className="mt-6 text-lg text-gray-400">
+            <p className="mt-6 text-lg text-slate-600">
 
               Gemini AI is analyzing the company...
 

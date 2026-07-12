@@ -5,9 +5,9 @@ export default function Navbar() {
 
         {/* Logo */}
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
 
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-400 text-xl font-bold text-white shadow-lg">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-500 to-indigo-500 text-xl font-bold text-white shadow-md">
             IQ
           </div>
 
@@ -17,7 +17,7 @@ export default function Navbar() {
               InvestIQ
             </h1>
 
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-slate-500">
               AI Investment Research Agent
             </p>
 
@@ -27,25 +27,25 @@ export default function Navbar() {
 
         {/* Menu */}
 
-        <div className="hidden items-center gap-8 text-gray-300 md:flex">
+        <div className="hidden items-center gap-8 text-slate-600 md:flex">
 
           <a
             href="#"
-            className="transition hover:text-white"
+            className="font-medium transition duration-300 hover:text-violet-600"
           >
             Dashboard
           </a>
 
           <a
             href="#"
-            className="transition hover:text-white"
+            className="font-medium transition duration-300 hover:text-violet-600"
           >
             AI Analysis
           </a>
 
           <a
             href="#"
-            className="transition hover:text-white"
+            className="font-medium transition duration-300 hover:text-violet-600"
           >
             Features
           </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
 
         {/* Button */}
 
-        <button className="primary-btn rounded-full px-6 py-3 font-semibold">
+        <button className="primary-btn rounded-xl px-6 py-3 font-semibold">
           Analyze Now
         </button>
 

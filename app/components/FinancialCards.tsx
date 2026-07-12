@@ -17,30 +17,35 @@ interface Props {
 export default function FinancialCards({
   financials,
 }: Props) {
+
   const cards = [
     {
       title: "Revenue",
       value: financials.revenueGrowth,
       icon: TrendingUp,
-      color: "text-green-400",
+      color: "text-emerald-500",
+      bg: "bg-emerald-50",
     },
     {
       title: "Position",
       value: financials.marketPosition,
       icon: Building2,
-      color: "text-blue-400",
+      color: "text-violet-600",
+      bg: "bg-violet-50",
     },
     {
       title: "Risk",
       value: financials.riskLevel,
       icon: ShieldAlert,
-      color: "text-red-400",
+      color: "text-red-500",
+      bg: "bg-red-50",
     },
     {
       title: "Outlook",
       value: financials.futureOutlook,
       icon: Rocket,
-      color: "text-purple-400",
+      color: "text-indigo-600",
+      bg: "bg-indigo-50",
     },
   ];
 
@@ -48,24 +53,34 @@ export default function FinancialCards({
     <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 
       {cards.map((card) => {
+
         const Icon = card.icon;
 
         return (
+
           <div
             key={card.title}
             className="glass hover-card rounded-3xl p-6"
           >
-            <Icon className={`${card.color}`} size={34} />
 
-            <p className="mt-5 text-sm uppercase tracking-widest text-gray-400">
+            <div
+              className={`flex h-14 w-14 items-center justify-center rounded-2xl ${card.bg}`}
+            >
+              <Icon className={card.color} size={30} />
+            </div>
+
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
               {card.title}
             </p>
 
-            <h2 className="mt-3 text-2xl font-bold text-white">
+            <h2 className="mt-3 text-2xl font-bold text-slate-900">
               {card.value}
             </h2>
+
           </div>
+
         );
+
       })}
 
     </div>

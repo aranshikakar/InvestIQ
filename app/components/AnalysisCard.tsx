@@ -39,40 +39,41 @@ export default function AnalysisCard({
   chartData,
   riskData,
 }: Props) {
-  const recommendationColor =
+
+  const recommendationStyle =
     recommendation === "BUY"
-      ? "bg-green-500"
+      ? "bg-emerald-100 text-emerald-700 border border-emerald-300"
       : recommendation === "HOLD"
-      ? "bg-yellow-500"
-      : "bg-red-500";
+      ? "bg-amber-100 text-amber-700 border border-amber-300"
+      : "bg-red-100 text-red-700 border border-red-300";
 
   return (
     <div className="space-y-8">
 
       {/* Header */}
 
-      <div className="rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-xl">
+      <div className="glass rounded-3xl p-8">
 
-        <div className="grid lg:grid-cols-3 gap-8 items-center">
+        <div className="grid items-center gap-8 lg:grid-cols-3">
 
           <div className="lg:col-span-2">
 
-            <h1 className="text-5xl font-bold text-white">
+            <h1 className="text-5xl font-bold text-slate-900">
               {company}
             </h1>
 
-            <p className="mt-5 text-gray-300 leading-7">
+            <p className="mt-5 leading-8 text-slate-600">
               {summary}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
 
-              <div className="rounded-full bg-blue-600 px-5 py-2 text-white font-semibold">
+              <div className="rounded-full border border-violet-200 bg-violet-50 px-5 py-2 font-semibold text-violet-700">
                 {status}
               </div>
 
               <div
-                className={`rounded-full px-8 py-2 text-lg font-bold text-white ${recommendationColor}`}
+                className={`rounded-full px-6 py-2 text-lg font-bold ${recommendationStyle}`}
               >
                 {recommendation}
               </div>
@@ -82,7 +83,9 @@ export default function AnalysisCard({
           </div>
 
           <div className="flex justify-center">
+
             <ScoreCircle score={score} />
+
           </div>
 
         </div>
@@ -103,21 +106,23 @@ export default function AnalysisCard({
 
         {/* Strengths */}
 
-        <div className="rounded-3xl border border-green-500/20 bg-slate-900 p-8">
+        <div className="glass rounded-3xl p-8">
 
-          <h2 className="mb-6 text-2xl font-bold text-green-400">
+          <h2 className="mb-6 text-2xl font-bold text-emerald-600">
             Key Strengths
           </h2>
 
           <div className="space-y-4">
 
             {strengths.map((item, index) => (
+
               <div
                 key={index}
-                className="rounded-xl bg-slate-800 p-4 text-gray-300"
+                className="rounded-2xl border border-emerald-100 bg-emerald-50 p-4 text-slate-700 shadow-sm"
               >
                 ✅ {item}
               </div>
+
             ))}
 
           </div>
@@ -126,21 +131,23 @@ export default function AnalysisCard({
 
         {/* Risks */}
 
-        <div className="rounded-3xl border border-red-500/20 bg-slate-900 p-8">
+        <div className="glass rounded-3xl p-8">
 
-          <h2 className="mb-6 text-2xl font-bold text-red-400">
+          <h2 className="mb-6 text-2xl font-bold text-red-600">
             Key Risks
           </h2>
 
           <div className="space-y-4">
 
             {risks.map((item, index) => (
+
               <div
                 key={index}
-                className="rounded-xl bg-slate-800 p-4 text-gray-300"
+                className="rounded-2xl border border-red-100 bg-red-50 p-4 text-slate-700 shadow-sm"
               >
                 ⚠️ {item}
               </div>
+
             ))}
 
           </div>

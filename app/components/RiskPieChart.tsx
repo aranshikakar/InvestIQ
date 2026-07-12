@@ -16,43 +16,63 @@ interface Props {
 }
 
 const COLORS = [
-  "#3B82F6",
-  "#10B981",
-  "#F59E0B",
-  "#EF4444",
+  "#7C3AED", // Primary Violet
+  "#A855F7", // Purple
+  "#10B981", // Emerald
+  "#F59E0B", // Amber
 ];
 
 export default function RiskPieChart({ data }: Props) {
   return (
-    <div className="rounded-2xl bg-slate-900 p-6 shadow-lg">
-      <h2 className="mb-6 text-2xl font-bold text-white">
+    <div className="glass rounded-3xl p-6">
+
+      <h2 className="mb-6 text-2xl font-bold text-slate-900">
         Risk Distribution
       </h2>
 
       <div className="h-80">
+
         <ResponsiveContainer width="100%" height="100%">
+
           <PieChart>
 
             <Pie
               data={data}
               dataKey="value"
               nameKey="name"
-              outerRadius={100}
-              label
+              outerRadius={105}
+              innerRadius={55}
+              paddingAngle={3}
+              label={({ name, percent }) =>
+  `${name} ${((percent ?? 0) * 100).toFixed(0)}%`
+}
             >
+
               {data.map((_, index) => (
                 <Cell
                   key={index}
                   fill={COLORS[index % COLORS.length]}
                 />
               ))}
+
             </Pie>
 
-            <Tooltip />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "#FFFFFF",
+                border: "1px solid #E2E8F0",
+                borderRadius: "12px",
+                color: "#0F172A",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+              }}
+            />
 
           </PieChart>
+
         </ResponsiveContainer>
+
       </div>
+
     </div>
   );
 }
