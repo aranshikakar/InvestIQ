@@ -175,7 +175,7 @@ The frontend communicates with a secure Next.js API route, which prompts Gemini 
 Repository
 https://github.com/aranshikakar/InvestIQ
 Deployment
-(Add your Vercel URL here)
+https://invest-iq-d6md.vercel.app/
 Author
 
 Aranshika Kar
