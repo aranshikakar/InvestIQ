@@ -1,36 +1,181 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+InvestIQ – AI Investment Research Agent
+Overview
 
-## Getting Started
+InvestIQ is an AI-powered investment research platform that analyzes publicly traded companies and provides investment insights using Google's Gemini Large Language Model (LLM).
 
-First, run the development server:
+The application generates a structured investment report including:
 
-```bash
+AI-generated company summary
+Investment score
+BUY / HOLD / AVOID recommendation
+Financial metrics
+Revenue visualization
+Risk distribution charts
+
+The objective is to simplify preliminary investment research by combining AI-powered analysis with an interactive dashboard.
+
+Features
+AI-powered company analysis
+Google Gemini LLM integration
+Interactive financial dashboard
+Revenue trend visualization
+Risk analysis charts
+Investment recommendation
+Responsive user interface
+Tech Stack
+Frontend
+Next.js
+React
+TypeScript
+Tailwind CSS
+Backend
+Next.js API Routes
+AI
+Google Gemini
+@google/genai SDK
+Charts
+Recharts
+Deployment
+Vercel
+Project Architecture
+User
+
+↓
+
+Company Search
+
+↓
+
+Next.js Frontend
+
+↓
+
+API Route (/api/analyze)
+
+↓
+
+Gemini LLM
+
+↓
+
+Structured JSON
+
+↓
+
+Dashboard Components
+
+↓
+
+Charts + Recommendation
+How to Run
+Clone the repository
+git clone https://github.com/aranshikakar/InvestIQ.git
+Install dependencies
+npm install
+Create a .env.local file
+GEMINI_API_KEY=YOUR_API_KEY
+Run
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
+Environment Variables
+GEMINI_API_KEY
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Required to access Google's Gemini API.
 
-## Learn More
+How It Works
+User enters a company name.
+The frontend sends the request to the Next.js API.
+The API prompts the Gemini LLM to generate structured investment insights.
+Gemini returns JSON containing:
+Company summary
+Investment score
+Recommendation
+Financial information
+Revenue trend
+Risk distribution
+The frontend renders the data using React components and Recharts.
+Key Design Decisions
+Why Gemini?
 
-To learn more about Next.js, take a look at the following resources:
+Gemini provides high-quality natural language reasoning and structured JSON generation, making it suitable for AI-powered financial summaries.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Why Next.js API Routes?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+API routes keep the Gemini API key secure and prevent exposing credentials in the browser.
 
-## Deploy on Vercel
+Why TypeScript?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Type safety reduces runtime errors and improves maintainability.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Why Recharts?
+
+Recharts integrates well with React and enables responsive, interactive visualizations.
+
+Trade-offs
+
+Current limitations include:
+
+AI-generated insights are based on prompts and are not connected to live financial APIs.
+Revenue and risk visualizations rely on structured AI responses rather than real-time market data.
+No user authentication or portfolio tracking is included.
+
+These choices kept the project focused, lightweight, and suitable for the assignment timeline.
+
+Example Runs
+Microsoft
+
+Recommendation: BUY
+
+Score: 92/100
+
+Summary:
+
+Microsoft demonstrates strong revenue growth, diversified business segments, and leadership in cloud computing and AI, making it a favorable long-term investment.
+
+Tesla
+
+Recommendation: HOLD
+
+Score: 76/100
+
+Summary:
+
+Tesla has strong growth potential but faces increased competition, valuation concerns, and execution risks.
+
+Nokia
+
+Recommendation: AVOID
+
+Score: 48/100
+
+Summary:
+
+Nokia faces slower growth, intense market competition, and limited upside compared to industry leaders.
+
+Future Improvements
+
+With additional development time, I would:
+
+Integrate real-time financial APIs
+Add historical stock price analysis
+Implement Retrieval-Augmented Generation (RAG)
+Support PDF annual report analysis
+Add user authentication and watchlists
+Improve dashboard customization
+Deploy with CI/CD and automated testing
+AI Usage
+
+This project uses Google Gemini as the Large Language Model (LLM) to generate structured investment analysis.
+
+The frontend communicates with a secure Next.js API route, which prompts Gemini and returns structured JSON for visualization.
+
+Repository
+https://github.com/aranshikakar/InvestIQ
+Deployment
+(Add your Vercel URL here)
+Author
+
+Aranshika Kar
